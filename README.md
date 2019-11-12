@@ -41,14 +41,14 @@ API que onde realiza a busca por hashtag e posteiormente possibilita saber o top
 ---
 # Diagrama de Arquitetura
 ---
-![N|Solid](https://cdn.cinepop.com.br/2018/01/magneto-ex-men4-750x380.jpg)
+![https://github.com/leorenan/desafio-twitter/blob/master/img/Diagrama_Arquitetura.jpg](img/Diagrama_Arquitetura.jpg)
 ---
 # Fluxo de execução
 ---
 Quando o desenvolvedor efetua o push (poderia ser outros eventos como: merge request e o mais adequado), o GITHUB aciona o Jenkins.
 O Jenkins por sua vez executa os seguintes passos: 
 
-![N|Solid](https://cdn.cinepop.com.br/2018/01/magneto-ex-men4-750x380.jpg)
+![https://github.com/leorenan/desafio-twitter/blob/master/img/Jenkins_flow.JPG](img/Jenkins_flow.JPG)
 
 - Faz o checkout do projeto; 
 - Compila utilizando o maven;
