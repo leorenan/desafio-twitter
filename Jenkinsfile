@@ -161,7 +161,7 @@ pipeline {
 			      echo "Aguardando atualização da task"
 			      sleep 60
             	}
-        	}
+        	} 
     	}
     	
     	
