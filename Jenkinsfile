@@ -1,6 +1,6 @@
 
 properties([pipelineTriggers([githubPush()])])
- 
+
 def imageName = "leorenan/desafio-twitter"
 def imageVersion = "${env.BUILD_ID}"
 def taskFamily = "ECS-task-poc-desafio-twitter"
