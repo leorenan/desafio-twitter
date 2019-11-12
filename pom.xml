@@ -12,7 +12,7 @@
 
 	<groupId>br.com.desafio.leorenanr</groupId>
 	<artifactId>busca-twitter</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0</version> 
 	<name>BuscaTwitter</name>
 	<description>Serviço de busca de hashtag no Twitter</description>
 
