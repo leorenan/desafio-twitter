@@ -163,8 +163,7 @@ pipeline {
             	}
         	} 
     	}
-    	
-    	
+    	    	
     	stage ('Deploy ECS - Move Porta 8080 para 80 '){  
 	    	when {
                 expression {return true}
