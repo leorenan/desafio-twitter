@@ -1,0 +1,34 @@
+{
+	"family": "desafio-twitter",
+	"networkMode": "awsvpc",
+	"containerDefinitions": [
+		{
+			"image": "docker.io/%BUILD_TAG%",
+			"cpu": 10,
+      		"memory":512,			
+			"name": "desafio-twitter",
+			"essential": true,
+			"portMappings": [
+				{
+					"containerPort": 8080,
+					"protocol": "tcp"
+				}
+			],
+			"logConfiguration": {
+				"logDriver": "awslogs",
+				"options": {
+					"awslogs-group": "/ecs/fargate-task-definition",
+					"awslogs-region": "us-east-1",
+					"awslogs-stream-prefix": "ecs"
+				}
+			}
+		}
+	],
+	"taskRoleArn": "arn:aws:iam::935138652679:role/ecsTaskExecutionRole",
+	"executionRoleArn": "arn:aws:iam::935138652679:role/ecsTaskExecutionRole",
+	"requiresCompatibilities": [
+		"FARGATE"
+	],
+	"cpu": "512", 
+	"memory": "1024"
+}
