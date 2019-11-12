@@ -25,7 +25,7 @@ public class BuscaHashtagController {
 	private TwittsServiceImpl twittsServiceImpl;
 
 	@GetMapping("/hashtag")
-	@ApiOperation(value = "Busca todas a hashtag", httpMethod = "GET", notes = "Busca os 100 Twitts com a determida Hashtags")
+	@ApiOperation(value = "Busca todas a hashtag", httpMethod = "GET", notes = "Busca os 100 Twitts com a determida Hashtags ")
 	@ApiResponses(value = {
 			 @ApiResponse(code=200, message = "Retorna a lista que foi pesquisada no Twitter"),
 			 @ApiResponse(code=400, message = "Retorna o erro quando a lista de hashtags esta sem elementos")
