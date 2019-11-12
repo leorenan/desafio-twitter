@@ -28,6 +28,20 @@ pipeline {
 	    	}
 	    }
 	    
+	    stage ('Build Maven'){
+	    	when {
+                expression {return true}
+            }
+	    	agent any
+            steps{
+            	script{
+			        withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
+			            sh  "mvn clean package"
+			        }
+		        }
+	        }
+	    }
+	    
 	    stage ('SonarQube Analise'){
 	    	when {
                 expression {return true}
@@ -44,19 +58,7 @@ pipeline {
 	        }
 	    }
 	    
-	    stage ('Build Maven'){
-	    	when {
-                expression {return true}
-            }
-	    	agent any
-            steps{
-            	script{
-			        withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
-			            sh  "mvn clean package"
-			        }
-		        }
-	        }
-	    }
+	    
 	    
 	    stage ('Build e Push Docker'){  
 	    	when {
