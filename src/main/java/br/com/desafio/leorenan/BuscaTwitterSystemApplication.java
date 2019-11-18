@@ -18,7 +18,7 @@ public class BuscaTwitterSystemApplication {
 	@Bean
     CommandLineRunner init(TwittsRepository hashtagRepository) {
 		return args -> {
-
+ 
 		};
 		
 	}
