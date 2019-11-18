@@ -35,7 +35,7 @@ public class BuscaHashtagController {
 	public Response getAll(
 			@ApiParam(value = "Lista de hashtags passadas via query parameters", required = true) @RequestParam(required = true) List<String> hashtags) {
 		
-		if(hashtags == null || hashtags.size() < 1) {			
+		if(hashtags == null || hashtags.isEmpty()) {			
 			InvalidParameterException e = new InvalidParameterException();
 			
 			Response response = Response.validationException();
