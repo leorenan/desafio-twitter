@@ -12,7 +12,7 @@ import br.com.desafio.leorenan.repository.TwittsRepository;
 public class BuscaTwitterSystemApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(BuscaTwitterSystemApplication.class, args);		
+		SpringApplication.run(BuscaTwitterSystemApplication.class, null);		
 	}
 	
 	@Bean
