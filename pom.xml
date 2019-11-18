@@ -12,15 +12,15 @@
 
 	<groupId>br.com.desafio.leorenanr</groupId>
 	<artifactId>busca-twitter</artifactId>
-	<version>1.0.0</version> 
-	<name>BuscaTwitter</name> 
+	<version>1.0.0</version>
+	<name>BuscaTwitter</name>
 	<description>Serviço de busca de hashtag no Twitter</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-        <junit-jupiter.version>5.3.2</junit-jupiter.version>
-        <mockito.version>2.24.0</mockito.version>
-	</properties> 
+		<junit-jupiter.version>5.3.2</junit-jupiter.version>
+		<mockito.version>2.24.0</mockito.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -83,30 +83,30 @@
 			<artifactId>gson</artifactId>
 		</dependency>
 		<!-- exclude junit 4 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
-        <!-- junit 5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<!-- junit 5 -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -115,9 +115,29 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>    
-	                <mainClass>br.com.desafio.leorenan.BuscaTwitterSystemApplication</mainClass>
-	            </configuration>
+				<configuration>
+					<mainClass>br.com.desafio.leorenan.BuscaTwitterSystemApplication</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.0</version>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
