@@ -49,7 +49,7 @@ public class Statuses {
 
 	private String coordinates;
 
-	private String place;
+	private Place place;
 
 	private String contributors;
 
