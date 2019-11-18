@@ -35,29 +35,12 @@ public class Response<T> {
         return response;
     }
 
-    public static <T> Response<T> unauthorized() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.UNAUTHORIZED);
-        return response;
-    }
-
     public static <T> Response<T> validationException() {
         Response<T> response = new Response<>();
         response.setStatus(Status.VALIDATION_EXCEPTION);
         return response;
     }
 
-    public static <T> Response<T> wrongCredentials() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.WRONG_CREDENTIALS);
-        return response;
-    }
-
-    public static <T> Response<T> accessDenied() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.ACCESS_DENIED);
-        return response;
-    }
 
     public static <T> Response<T> exception() {
         Response<T> response = new Response<>();
@@ -87,7 +70,7 @@ public class Response<T> {
     }
 
     public enum Status {
-        OK, BAD_REQUEST, UNAUTHORIZED, VALIDATION_EXCEPTION, EXCEPTION, WRONG_CREDENTIALS, ACCESS_DENIED, NOT_FOUND, DUPLICATE_ENTITY
+        OK, BAD_REQUEST, VALIDATION_EXCEPTION, EXCEPTION, NOT_FOUND, DUPLICATE_ENTITY
     }
     
 }
