@@ -35,9 +35,14 @@ public class BuscaHashtagController {
 	public Response getAll(
 			@ApiParam(value = "Lista de hashtags passadas via query parameters", required = true) @RequestParam(required = true) List<String> hashtags) {
 		
-		if(hashtags == null || hashtags.size() < 1) {
-			InvalidParameterException e = new InvalidParameterException("Informe pelo menos uma hashtag");
-			return Response.validationException().setErrors(e);
+		if(hashtags == null || hashtags.size() < 1) {			
+			InvalidParameterException e = new InvalidParameterException();
+			
+			Response response = Response.validationException();
+			response.addErrorMsgToResponse("Informe pelo menos uma hashtag", new InvalidParameterException());
+			response.setErrors(e);
+			
+			return response;
 		}
 		
 		return Response.ok().setPayload(twittsServiceImpl.addHashtag(hashtags));
