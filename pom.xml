@@ -123,19 +123,12 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.0</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*br/com/desafio/leorenan/service/model/**</exclude>
+					</excludes>
+				</configuration>
 				<executions>
-                <execution>
-                	<id>json-twitter</id>
-                	<goals>
-                        <goal>prepare-agent-integration</goal>
-                    </goals>
-                    <configuration>
-                        <destFile>${project.build.directory}/integration-coverage-reports/jacoco-it.exec</destFile>
-                        <excludes>
-                            <exclude>br/com/desafio/leorenan/service/model/*</exclude>
-                        </excludes>
-                    </configuration>
-                </execution>
 					<execution>
 						<id>default-prepare-agent</id>
 						<goals>
