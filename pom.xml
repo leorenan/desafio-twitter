@@ -125,7 +125,7 @@
 				<version>0.8.0</version>
 				<configuration>
 					<excludes>
-						<exclude>**/*br/com/desafio/leorenan/service/model/**</exclude>
+						<exclude>**/*br/com/desafio/leorenan/service/model/**</exclude> 
 						<exclude>**/*br/com/desafio/leorenan/BuscaTwitterSystemApplication.class</exclude>
 					</excludes>
 				</configuration>
