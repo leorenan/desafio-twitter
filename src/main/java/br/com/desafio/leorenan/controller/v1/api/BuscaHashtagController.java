@@ -1,5 +1,6 @@
 package br.com.desafio.leorenan.controller.v1.api;
 
+import java.security.InvalidParameterException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class BuscaHashtagController {
 	@Autowired
 	private TwittsServiceImpl twittsServiceImpl;
 
+	@SuppressWarnings("rawtypes")
 	@GetMapping("/hashtag")
 	@ApiOperation(value = "Busca todas a hashtag", httpMethod = "GET", notes = "Busca os 100 Twitts com a determida Hashtags ")
 	@ApiResponses(value = {
@@ -32,6 +34,11 @@ public class BuscaHashtagController {
 	})
 	public Response getAll(
 			@ApiParam(value = "Lista de hashtags passadas via query parameters", required = true) @RequestParam(required = true) List<String> hashtags) {
+		
+		if(hashtags == null & hashtags.size() > 0) {
+			InvalidParameterException e = new InvalidParameterException("Informe pelo menos uma hashtag");
+			return Response.validationException().setErrors(e);
+		}
 		
 		return Response.ok().setPayload(twittsServiceImpl.addHashtag(hashtags));
 	}

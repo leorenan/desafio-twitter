@@ -4,12 +4,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 public class PropertiesUtil {
 
+	private static Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
+	
 	@Getter private static String TwitterBaseUrl;
 	@Getter private static String TwitterConsumerKey;
 	@Getter private static String TwitterConsumerSecret;
@@ -20,7 +25,7 @@ public class PropertiesUtil {
             Properties prop = new Properties();
 
             if (input == null) {
-                System.out.println("Erro ao carregar o config.properties");
+            	logger.error("Erro ao carregar o config.properties");
             }
 
             prop.load(input);
