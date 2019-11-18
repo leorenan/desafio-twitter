@@ -39,7 +39,7 @@ public class BuscaHashtagController {
 			InvalidParameterException e = new InvalidParameterException();
 			
 			Response response = Response.validationException();
-			response.addErrorMsgToResponse("Informe pelo menos uma hashtag", new InvalidParameterException());
+			response.addErrorMsgToResponse("Informe pelo menos uma hashtag", e);
 			response.setErrors(e);
 			
 			return response;
