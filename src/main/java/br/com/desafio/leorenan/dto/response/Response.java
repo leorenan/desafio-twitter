@@ -25,12 +25,6 @@ public class Response<T> {
     private Object errors;
     private Object metadata;
 
-    public static <T> Response<T> badRequest() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.BAD_REQUEST);
-        return response;
-    }
-
     public static <T> Response<T> ok() {
         Response<T> response = new Response<>();
         response.setStatus(Status.OK);
@@ -40,25 +34,6 @@ public class Response<T> {
     public static <T> Response<T> validationException() {
         Response<T> response = new Response<>();
         response.setStatus(Status.VALIDATION_EXCEPTION);
-        return response;
-    }
-
-
-    public static <T> Response<T> exception() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.EXCEPTION);
-        return response;
-    }
-
-    public static <T> Response<T> notFound() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.NOT_FOUND);
-        return response;
-    }
-
-    public static <T> Response<T> duplicateEntity() {
-        Response<T> response = new Response<>();
-        response.setStatus(Status.DUPLICATE_ENTITY);
         return response;
     }
 
@@ -72,7 +47,7 @@ public class Response<T> {
     }
 
     public enum Status {
-        OK, BAD_REQUEST, VALIDATION_EXCEPTION, EXCEPTION, NOT_FOUND, DUPLICATE_ENTITY
+        OK, VALIDATION_EXCEPTION
     }
     
 }
