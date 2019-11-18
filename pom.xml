@@ -127,6 +127,7 @@
 					<excludes>
 						<exclude>**/*br/com/desafio/leorenan/service/model/**</exclude> 
 						<exclude>**/*br/com/desafio/leorenan/BuscaTwitterSystemApplication.class</exclude>
+						<exclude>**/*br/com/desafio/leorenan/BuscaTwitterSystemApplication.java</exclude>
 					</excludes>
 				</configuration>
 				<executions>
