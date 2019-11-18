@@ -1,6 +1,8 @@
 package br.com.desafio.leorenan.controller.v1.api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +50,6 @@ public class BuscaHashtagControllerTest {
 		 	assertEquals(Status.VALIDATION_EXCEPTION, response.getStatus());
 	    }
 	 
-	 @DisplayName("Teste de buscar as hashtags selecionadas, parametro nulo")
-	    @Test
-	    void testGetErroParametroNulo() {
-		 	@SuppressWarnings("rawtypes")
-			Response response = controller.getAll(null);
-		 	assertEquals(Status.VALIDATION_EXCEPTION, response.getStatus());
-	    }
+	
 	
 }
