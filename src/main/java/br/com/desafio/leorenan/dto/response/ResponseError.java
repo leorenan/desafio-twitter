@@ -1,15 +1,11 @@
 package br.com.desafio.leorenan.dto.response;
-
 import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-
 @Getter
 @Setter
 @Accessors(chain = true)

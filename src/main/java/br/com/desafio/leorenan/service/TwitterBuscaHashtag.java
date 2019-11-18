@@ -20,6 +20,10 @@ import br.com.desafio.leorenan.service.model.Root;
 import br.com.desafio.leorenan.util.PropertiesUtil;
 
 public class TwitterBuscaHashtag {
+	
+	private TwitterBuscaHashtag() {
+		
+	}
 
 	public static Root buscar(List<String> hashtags) {
 		String q = formataQueryParameters(hashtags);

@@ -1,6 +1,5 @@
 package br.com.desafio.leorenan.dto.response;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

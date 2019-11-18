@@ -25,12 +25,12 @@ public class TwittsServiceImpl implements TwittsService {
 	@Override
 	public List<TwittsDto> addHashtag(List<String> hashtagsName) {
 		Root root = TwitterBuscaHashtag.buscar(hashtagsName);
-		List<Twitts> twittsList = new ArrayList<Twitts>();
+		List<Twitts> twittsList = new ArrayList<>();
 
 		for (Statuses s : root.getStatuses()) {
 			int hashtagCount = 0;
 
-			List<String> hashtagNames = new ArrayList<String>();
+			List<String> hashtagNames = new ArrayList<>();
 
 			for (Hashtags h : s.getEntities().getHashtags()) {	
 				if (hashtagsName.stream().anyMatch(str -> str.toLowerCase().trim().contains(h.getText().toLowerCase().trim())))

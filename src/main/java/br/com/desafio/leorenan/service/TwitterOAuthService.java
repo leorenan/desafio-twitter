@@ -18,7 +18,7 @@ import br.com.desafio.leorenan.util.PropertiesUtil;
 
 public class TwitterOAuthService {
 
-	private static String TOKEN; 
+	private static String token; 
 	
 	
 	
@@ -28,7 +28,7 @@ public class TwitterOAuthService {
 	
 	
 	public static String getToken() {
-		if(TOKEN == null || TOKEN.trim().isEmpty()) {
+		if(token == null || token.trim().isEmpty()) {
 			String uri = PropertiesUtil.getTwitterBaseUrl().concat("/oauth2/token");
 			RestTemplate rt = new RestTemplate();
 			HttpHeaders headers = new HttpHeaders();
@@ -36,19 +36,19 @@ public class TwitterOAuthService {
 			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 			headers.setBasicAuth(PropertiesUtil.getTwitterConsumerKey(), PropertiesUtil.getTwitterConsumerSecret());
 			
-			MultiValueMap<String, String> req= new LinkedMultiValueMap<String, String>();
+			MultiValueMap<String, String> req= new LinkedMultiValueMap<>();
 			req.add("grant_type", "client_credentials");
 			
-			HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<MultiValueMap<String, String>>(req, headers);
+			HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(req, headers);
 	
 			ResponseEntity<String> res = rt.exchange(uri, HttpMethod.POST, entity, String.class);
 			
 			Gson gson = new Gson();
-			Token token = gson.fromJson( res.getBody(), Token.class ); 
+			Token tokenObj = gson.fromJson( res.getBody(), Token.class ); 
 			
-			TOKEN = token.getAccess_token();			
+			token = tokenObj.getAccess_token();			
 		}
 		
-		return TOKEN;
+		return token;
 	}
 }
