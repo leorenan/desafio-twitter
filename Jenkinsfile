@@ -163,6 +163,22 @@ pipeline {
             	}
         	} 
     	}
+    	
+    	stage ('Teste Automatizado Porta 8080 - API '){  
+	    	when {
+                expression {return true}
+            }  	
+	    	agent any
+            steps{
+            	script{
+		          checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/leorenan/defario-twitter-test.git']]])
+		          sh "cd defario-twitter-test"
+		          withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
+			            sh  "mvn clean package"
+			      }
+		        }
+        	}
+    	}
     	    	
     	stage ('Deploy ECS - Move Porta 8080 para 80 '){  
 	    	when {

@@ -22,8 +22,10 @@ API que onde realiza a busca por hashtag e posteiormente possibilita saber o top
 - - Lombok 1.2.3
  - - Swagger 2
  - - Maven 3.6.2
+ - - JUnit 5
  -  **Qualidade código:** SonarQube 8.0 Community  
-  - **Repositorio de imagens Docker:** Docker HUB
+ -  **Teste funcional:** Karate DSL 0.9.4 (JUnit 5)  
+ - **Repositorio de imagens Docker:** Docker HUB
  - **Ambiente de nuvem:** AWS
  - - AWS ECS (Elastic Container Service)
  - - AWS Fargate
@@ -62,12 +64,11 @@ O Jenkins por sua vez executa os seguintes passos:
 
 ---
 
-# Melhorias
+# Testes
 ---
-Este projeto tem como roadmap de melhorias os seguintes topicos:
-- Contruir camada de teste unitario e garantir a cobertura de minimo de 80%
-- Realizar Smoke Test e Acceptance Test podendo ser realizados com as ferramentas KarateDSL e/ou Selenium
-- Teste de carga com JMeter
+Este projeto utilizou como testes:
+- Camada de teste unitario e que garante a cobertura de minimo de 80%
+- Realizar Smoke Test utilizando a ferramenta KarateDSL
 
 
 ---
