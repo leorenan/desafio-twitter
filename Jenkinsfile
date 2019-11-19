@@ -171,8 +171,17 @@ pipeline {
 	    	agent any
             steps{
             	script{
-		          checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/leorenan/defario-twitter-test.git']]])
-		          sh "cd defario-twitter-test"
+            		checkout([
+				        $class: 'GitSCM', 
+				        branches: [[name: '*/master']], 
+				        doGenerateSubmoduleConfigurations: false, 
+				        extensions: [[$class: 'CleanCheckout']], 
+				        submoduleCfg: [], 
+				        userRemoteConfigs: [[url: 'https://github.com/leorenan/defario-twitter-test.git']]
+				    ])
+            	
+		          sh "ls -lat"
+		          sh "pwd"
 		          withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
 			            sh  "mvn clean package"
 			      }
