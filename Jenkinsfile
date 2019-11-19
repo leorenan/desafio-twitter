@@ -180,8 +180,6 @@ pipeline {
 				        userRemoteConfigs: [[url: 'https://github.com/leorenan/defario-twitter-test.git']]
 				    ])
             	
-		          sh "ls -lat"
-		          sh "pwd"
 		          withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
 			            sh  "mvn test -Dtest=ExecuteTest"
 			      }
