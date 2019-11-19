@@ -159,7 +159,7 @@ pipeline {
 			      sh  "aws ecs update-service --region us-east-1 --cluster ${clusterName} --service ${serviceName8080} --task-definition ${taskFamily}:${taskRevisaoAtual}  --desired-count 1"
 			      
 			      echo "Aguardando atualização da task"
-			      sleep 60
+			      sleep 120
             	}
         	} 
     	}
