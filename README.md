@@ -80,6 +80,11 @@ Este projeto utilizou como testes:
  ``` 
     https://github.com/leorenan/desafio-twitter
 ```
+ GIT HUB - Projeto de testes Karate DSL
+ 
+ ``` 
+    https://github.com/leorenan/desafio-twitter-test
+```
  Docker HUB
  
  ``` 

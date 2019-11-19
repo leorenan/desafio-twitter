@@ -177,7 +177,7 @@ pipeline {
 				        doGenerateSubmoduleConfigurations: false, 
 				        extensions: [[$class: 'CleanCheckout']], 
 				        submoduleCfg: [], 
-				        userRemoteConfigs: [[url: 'https://github.com/leorenan/defario-twitter-test.git']]
+				        userRemoteConfigs: [[url: 'https://github.com/leorenan/desafio-twitter-test.git']]
 				    ])
             	
 		          withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
