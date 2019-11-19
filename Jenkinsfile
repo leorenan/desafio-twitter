@@ -183,7 +183,7 @@ pipeline {
 		          sh "ls -lat"
 		          sh "pwd"
 		          withMaven(jdk: 'Java 1.8-221', maven: 'Maven 3.6.2') {
-			            sh  "mvn clean package"
+			            sh  "mvn test -Dtest=ExecuteTest"
 			      }
 		        }
         	}
