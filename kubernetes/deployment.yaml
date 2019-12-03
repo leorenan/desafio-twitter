@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: desafio-twitter
+  labels:
+    app: desafio-twitter
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desafio-twitter
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: desafio-twitter
+    spec:
+      containers:
+      - image: leorenan/desafio-twitter:42
+        imagePullPolicy: Always
+        name: desafio-twitter
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: MONGODB_HOST
+          value: "18.209.171.35"
