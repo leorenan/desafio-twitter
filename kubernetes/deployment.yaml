@@ -21,12 +21,12 @@ spec:
         app: desafio-twitter
     spec:
       containers:
-      - image: leorenan/desafio-twitter:42
+      - image: leorenan/desafio-twitter:1.0
         imagePullPolicy: Always
         name: desafio-twitter
         ports:
         - containerPort: 8080
           protocol: TCP
-        env:
-        - name: MONGODB_HOST
-          value: "18.209.171.35"
+        envFrom:
+        - configMapRef:
+            name: desafio-twitter-configmap 
